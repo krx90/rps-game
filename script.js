@@ -5,6 +5,10 @@ const gameContainer = document.querySelector(".container"),
     result = document.querySelector(".result"),
     optionImages = document.querySelectorAll(".option_image");
 
+var popup = document.getElementById('popup');
+
+
+
 // Loop through each option image element
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
@@ -16,6 +20,8 @@ optionImages.forEach((image, index) => {
             //remove the "active" class from the other option images
             index !== index2 && image2.classList.remove("active");
         });
+
+        popup.style.display = "block";
 
         //set a timeout to delay the result display
         let time = setTimeout(() => {
@@ -55,7 +61,11 @@ optionImages.forEach((image, index) => {
             //Display the result
             result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!!`
             console.log(outComeValue);
+
+            popup.style.display = "none";
+
         }, 500)
+        
     });
 });
 

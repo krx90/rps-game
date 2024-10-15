@@ -22,6 +22,7 @@ body{
 .result_images{
     display: flex;
     column-gap: 7rem;
+    height: 162px;
 }
 .result_images img{
     width: 100px;

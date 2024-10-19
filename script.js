@@ -14,7 +14,7 @@ optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active");
 
-        //Loop through each optiin image again
+        //Loop through each option image again
         optionImages.forEach((image2, index2) => {
             //If the current index doesnt match the clicked indes
             //remove the "active" class from the other option images
@@ -35,6 +35,7 @@ optionImages.forEach((image, index) => {
             let ramdomNumber = Math.floor(Math.random() * 3);
             //create an array of cpu image options
             let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
+            //set the CPU result to the generated option
             cpuResult.src = cpuImages[ramdomNumber];
 
             //assign a letter value to the cpu option (R-Rock, P-Paper, S-Scissors)
@@ -44,20 +45,19 @@ optionImages.forEach((image, index) => {
 
             //create an object with all possible outcomes
             let outcomes = {
-                RR: "Draw",
+                //RR: "Draw",
                 RP: "CPU",
                 RS: "User",
-                PP: "Draw",
+                //PP: "Draw",
                 PR: "User",
                 PS: "CPU",
-                SS: "Draw",
+                //SS: "Draw",
                 SR: "CPU",
                 SP: "User",
             };
 
             //look up the outcome value based on user and cpu options 
             let outComeValue = outcomes[userValue + cpuValue];
-
             //Display the result
             result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!!`
             console.log(outComeValue);
